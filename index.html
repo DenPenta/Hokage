@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>HOKAGE | CS2 Servers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #0b0e14, #120f1a);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    .petal {
+      position: fixed;
+      top: -10vh;
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle at 30% 30%, #ffd6e8, #ff9acb 60%, #ff6fae);
+      border-radius: 60% 40% 60% 40%;
+      opacity: 0.85;
+      pointer-events: none;
+      animation: fall linear infinite, sway ease-in-out infinite;
+    }
+    @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+    @keyframes sway { 50% { margin-left: 40px; } }
+
+    header {
+      background: linear-gradient(135deg, #ff9acb, #ff6fae);
+      padding: 70px 20px 90px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 56px; letter-spacing: 6px; }
+    header p { font-size: 18px; }
+
+    .steam-login {
+      margin-top: 22px;
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav {
+      background: rgba(20, 16, 30, 0.9);
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 16px 0;
+    }
+    nav a { color: #ffd6e8; text-decoration: none; }
+
+    section { padding: 70px 20px; max-width: 1150px; margin: auto; }
+    h2 { text-align: center; color: #ff9acb; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #1f1835;
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    footer {
+      background: #0a0812;
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HOKAGE</h1>
+  <p>CS2 серверы • Сакура стиль</p>
+  <a class="steam-login" href="#">Войти через Steam</a>
+</header>
+
+<nav>
+  <a href="#">Сервера</a>
+  <a href="#">Магазин</a>
+  <a href="#">Донат</a>
+</nav>
+
+<section>
+  <h2>Наши сервера</h2>
+  <div class="cards">
+    <div class="card">HOKAGE | Public</div>
+    <div class="card">HOKAGE | DM</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 HOKAGE
+</footer>
+
+<script>
+  const PETALS = 25;
+  for (let i = 0; i < PETALS; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (Math.random() * 6 + 8) + 's';
+    document.body.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
